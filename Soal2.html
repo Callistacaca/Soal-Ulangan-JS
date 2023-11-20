@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cek Ganjil atau Genap</h1>
+
+    <label for="numberInput">Masukkan Angka:</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkOddEven()">Cek</button>
+
+    <p id="result">Hasil akan muncul di sini.</p>
+
+    <script>
+        function checkOddEven() {
+            var numberInput = document.getElementById("numberInput").value;
+            var resultElement = document.getElementById("result");
+            var resultMessage = "";
+
+            if (numberInput === "") {
+                resultMessage = "Masukkan angka terlebih dahulu.";
+            } else {
+                var number = parseInt(numberInput);
+
+                if (isNaN(number)) {
+                    resultMessage = "Masukkan valid angka.";
+                } else {
+                    resultMessage = number % 2 === 0 ? "Angka ini adalah genap." : "Angka ini adalah ganjil.";
+                }
+            }
+
+            resultElement.innerHTML = resultMessage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pengecekan Golongan Darah</h1>
+
+    <label for="bloodType">Pilih Golongan Darah:</label>
+    <select id="bloodType" onchange="checkBloodType()">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+    </select>
+
+    <p id="result">Karakteristik Golongan Darah akan muncul di sini.</p>
+
+    <script>
+        function checkBloodType() {
+            var bloodType = document.getElementById("bloodType").value;
+            var resultElement = document.getElementById("result");
+            var characteristics = "";
+
+            switch (bloodType) {
+                case "A":
+                    characteristics = "Orang dengan golongan darah A cenderung memiliki sifat sensitif, emosional, bersemangat, dan pintar.";
+                    break;
+                case "B":
+                    characteristics = "Orang dengan golongan darah B cenderung memiliki sifat semangat yang tinggi, aktif, kreatif.";
+                    break;
+                case "AB":
+                    characteristics = "Orang dengan golongan darah AB cenderung memiliki sifat sensitif dan sangat lembut.";
+                    break;
+                case "O":
+                    characteristics = "Orang dengan golongan darah O cenderung memiliki sifat baik hati, pemurah, menghargai pendapat orang lain, disukai banyak orang.";
+                    break;
+                default:
+                    characteristics = "Pilih golongan darah terlebih dahulu.";
+                    break;
+            }
+
+            resultElement.innerHTML = characteristics;
+        }
+    </script>
+</body>
+</html>
